@@ -1,0 +1,105 @@
+<html>
+<head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: rgb(0, 0, 0);
+        margin: 0;
+    }
+    .a{
+        width: 200px;
+        height: 250px;
+        background-color: rgb(230, 219, 186);
+        margin-top: 120px;
+        clip-path: polygon(20% 20%, 80% 20%, 100% 50%, 0% 50%);
+        position: absolute;
+        z-index: 6;
+    }
+    
+    .aa{
+        width: 30px;
+        height: 30px;
+        background-color: rgb(230, 219, 186);
+        border-radius: 50%;
+        position: absolute;
+        top: 200px;
+        z-index: 0;
+    }
+    .aa.saie{
+        box-shadow: 0 60px 450px 135px rgba(255, 229, 8, 0.9);
+        z-index: 7;
+    }
+    .b{
+        width: 18px;
+        height: 350px;
+        background-color: rgb(66, 55, 55);
+        position: absolute;
+        top: 200px;
+        box-shadow: 0 0 20px -7px rgb(161, 161, 161);
+        z-index: 2;
+    }
+    .c{
+        width: 127px;
+        height: 12px;
+        border-radius: 20px;
+        background-color: rgb(66, 55, 55);
+        position: absolute;
+        top: 550px;
+        z-index: 1;
+        
+    }
+    .de{
+        position: absolute;
+        top: 180px; 
+        left: 54%;
+        transition: top 0.17s ease;
+    }
+    .de.moved {
+        top: 230px;
+    }
+    .d{
+        width: 4px;
+        height: 210px;
+        background-color: rgb(64, 73, 35);
+        box-shadow: 0 0 30px 0 rgb(96, 105, 65);
+        position: absolute;
+        top: 0;
+        border-radius: 40px;
+        z-index: 4;
+    }
+    .e{
+        width: 20px;
+        height: 20px;
+        background-color: rgb(34, 39, 19);
+        border-radius: 50%;
+        position: absolute;
+        top: 208px;
+        right:-12px ;
+        cursor: pointer;
+        z-index: 5;
+    }
+    
+</style>
+</head>
+<body>
+        <div class="a"></div>
+        <div class="aa" id="diva"></div>
+        <div class="b"></div>
+        <div class="c"></div>
+        <div class="de" id="myContainer">
+            <div class="d"></div>
+            <div class="e" onclick="moveGroup()"></div>
+        </div>
+    <script>
+        function moveGroup() {
+            const container = document.getElementById('myContainer');
+            container.classList.toggle('moved');
+
+            const divA = document.getElementById('diva');
+            divA.classList.toggle('saie');
+        }
+    </script>
+</body>
+</html>
